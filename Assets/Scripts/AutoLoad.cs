@@ -16,7 +16,7 @@ public class AutoLoad : MonoBehaviour
 
     public IEnumerator Wait()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Menu");
     }
 }

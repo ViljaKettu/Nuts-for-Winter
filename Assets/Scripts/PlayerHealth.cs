@@ -1,9 +1,11 @@
 ﻿//Vilja Kettunen
 //TTK17SP1
 //Nuts-For-Winter
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthSlider;
 
     Movement playerMovement;
+    SceneFader fader;
 
     bool damaged;
     bool isDead;
@@ -19,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         playerMovement = GetComponent<Movement>();
-
+        fader = GetComponent<SceneFader>();
         //setting players starting health
         currentHealth = maxHealth;
     }
@@ -44,8 +47,14 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
         //stopping movement
         playerMovement.enabled = false;
+        StartCoroutine(Wait());
+        SceneManager.LoadScene("GameOver");
+    }
 
-        StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.Out, "GameOver"));
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2);
+    }
 }
-}
+
 
