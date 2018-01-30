@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PropSpawner : MonoBehaviour {
 
-    public GameObject prefab1, prefab2;
+    public GameObject prefab1;
 
    // float randX;
    public Vector2[] whereToSpawn;
