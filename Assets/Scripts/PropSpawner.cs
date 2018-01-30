@@ -4,27 +4,24 @@ using UnityEngine;
 
 public class PropSpawner : MonoBehaviour {
 
-    public GameObject props;
+    public GameObject prefab1, prefab2;
 
-    float randX;
-    Vector2 whereToSpawn;
-    public float spawnRate = 2f;
-    float nextSpawn = 0.0f;
+   // float randX;
+   public Vector2[] whereToSpawn;
+    //public float spawnRate = 2f;
+   // float nextSpawn = 0.0f;
 
 
 	// Use this for initialization
 	void Start () {
-		
+        int randomNumber = Random.Range(0, 4);
+        transform.position = whereToSpawn[randomNumber];
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > nextSpawn)
-        {
-            nextSpawn = Time.time + spawnRate;
-            randX = Random.Range(-8.4f, 8.4f);
-            whereToSpawn = new Vector2(randX, transform.position.y);
-            Instantiate(props, whereToSpawn, Quaternion.identity);
-        }
+		
+        
+        
 	}
 }

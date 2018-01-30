@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4136692580769526}
   - component: {fileID: 212111730230992092}
   - component: {fileID: 61235556834566456}
+  - component: {fileID: 114860981965460338}
   m_Layer: 0
   m_Name: kanto
   m_TagString: Untagged
@@ -66,6 +67,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.85, y: 1.03}
   m_EdgeRadius: 0
+--- !u!114 &114860981965460338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398922972290514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b9a56549fa67c469e0288bb6691084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab1: {fileID: 1398922972290514}
+  prefab2: {fileID: 1398922972290514}
+  whereToSpawn:
+  - {x: -20, y: 10}
+  - {x: 0, y: -5}
+  - {x: 18, y: 15}
+  - {x: 15, y: 7.5}
+  - {x: 8.5, y: 12}
+  - {x: 30, y: -15}
 --- !u!212 &212111730230992092
 SpriteRenderer:
   m_ObjectHideFlags: 1
