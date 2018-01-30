@@ -1,5 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//Vilja Kettunen
+//TTK17SP1
+//Nuts-For-Winter
 using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
@@ -36,6 +37,7 @@ public class EnemyAttack : MonoBehaviour
 
     void Update()
     {
+        //damaging player 
         if (playerInRange)
         {
             if (playerHealth.currentHealth > 0)

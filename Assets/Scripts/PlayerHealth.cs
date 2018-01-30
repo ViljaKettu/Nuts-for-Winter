@@ -1,7 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//Vilja Kettunen
+//TTK17SP1
+//Nuts-For-Winter
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -40,9 +42,10 @@ public class PlayerHealth : MonoBehaviour
     void Death()
     {
         isDead = true;
-
         //stopping movement
         playerMovement.enabled = false;
-    }
+
+        StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.Out, "GameOver"));
+}
 }
 
