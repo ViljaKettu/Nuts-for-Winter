@@ -4,20 +4,25 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class SceneFader : MonoBehaviour
 {
-    public void LoadNextLevel(string name)
+    public Image faderImage;
+    public Animator anim;
+
+    public void FadeScene()
     {
-        StartCoroutine(LevelLoad(name));
+        StartCoroutine(Fade());
+
     }
 
-    //load level after one sceond delay
-    public IEnumerator LevelLoad(string name)
+    IEnumerator Fade()
     {
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Menu");
+        anim.SetBool("Fade", true);
+        yield return new WaitUntil(() => faderImage.color.a == 1);
+        SceneManager.LoadScene("GameOver");
     }
 }
 

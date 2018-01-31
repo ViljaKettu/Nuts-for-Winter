@@ -5,14 +5,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
-    static float timeLeft = 5.0f;
+    static float timeLeft = 10.0f;
     bool timerIsOn = true;
+
+    SceneFader fadeScene;
 
     private void Awake()
     {
+        fadeScene = GetComponent<SceneFader>();
         ResetTime();
     }
 
@@ -30,8 +34,6 @@ public class TimerScript : MonoBehaviour
         if (timeLeft <= 0)
         {
             timerIsOn = false;
-            StartCoroutine(Wait());
-            SceneManager.LoadScene("Menu");
         }
         if (timerIsOn)
         {
@@ -44,11 +46,7 @@ public class TimerScript : MonoBehaviour
 
     public void ResetTime()
     {
-        timeLeft = 5.0f;
+        timeLeft = 10.0f;
     }
 
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(2);
-    }
 }

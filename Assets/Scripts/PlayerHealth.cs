@@ -14,7 +14,10 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthSlider;
 
     Movement playerMovement;
-    SceneFader fader;
+    SceneFader fadeScene;
+
+    public Image faderImage;
+    public Animator anim;
 
     bool damaged;
     bool isDead;
@@ -22,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         playerMovement = GetComponent<Movement>();
-        fader = GetComponent<SceneFader>();
+        fadeScene = GetComponent<SceneFader>();
         //setting players starting health
         currentHealth = maxHealth;
     }
@@ -46,14 +49,23 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true;
         //stopping movement
+        playerMovement.speed = 0;
         playerMovement.enabled = false;
-        StartCoroutine(Wait());
-        SceneManager.LoadScene("GameOver");
+        StartCoroutine(Fade());
+        //StartCoroutine(WaitToLoad());
+        //SceneManager.LoadScene("GameOver");
     }
 
-    IEnumerator Wait()
+    //IEnumerator WaitToLoad()
+    //{
+    //    yield return new WaitForSeconds(5);
+    //}
+
+    IEnumerator Fade()
     {
-        yield return new WaitForSeconds(2);
+        anim.SetBool("Fade", true);
+        yield return new WaitUntil(() => faderImage.color.a == 1);
+        SceneManager.LoadScene("gameOver");
     }
 }
 

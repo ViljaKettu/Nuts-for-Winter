@@ -4,19 +4,23 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AutoLoad : MonoBehaviour
 {
-    //Loads scene after delay
+    public Image faderImage;
+    public Animator anim;
 
     void Awake()
     {
-        StartCoroutine(Wait());
+        StartCoroutine(Fade());
     }
 
-    public IEnumerator Wait()
+    IEnumerator Fade()
     {
         yield return new WaitForSeconds(3);
+        anim.SetBool("Fade", true);
+        yield return new WaitUntil(()=>faderImage.color.a==1);
         SceneManager.LoadScene("Menu");
     }
 }
