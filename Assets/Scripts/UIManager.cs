@@ -2,7 +2,6 @@
 //TTK17SP1
 //Nuts-For-Winter
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 
 public class UIManager : MonoBehaviour
