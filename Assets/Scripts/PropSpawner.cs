@@ -14,7 +14,7 @@ public class PropSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        int randomNumber = Random.Range(0, 4);
+		int randomNumber = Random.Range(0, whereToSpawn.Length-1);
         transform.position = whereToSpawn[randomNumber];
 	}
 	
