@@ -16,7 +16,14 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+
+        Vector2 moveDirection = rbod.velocity;
+        if(moveDirection != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 

@@ -13,11 +13,11 @@ public class TimerScript : MonoBehaviour
     bool timerIsOn = true;
     public Text timeText;
 
-    SceneFader fadeScene;
+    public Image faderImage;
+    public Animator anim;
 
     private void Awake()
     {
-        fadeScene = GetComponent<SceneFader>();
         ResetTime();
     }
 
@@ -27,7 +27,10 @@ public class TimerScript : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
         }
-
+        else
+        {
+            StartCoroutine(Fade());
+        }
     }
 
     void OnGUI()
@@ -35,9 +38,9 @@ public class TimerScript : MonoBehaviour
         if (timeLeft <= 0)
         {
             timerIsOn = false;
-            SceneManager.LoadScene("GameOver");
+            //SceneManager.LoadScene("GameOver");
         }
-        if (timerIsOn)
+        else if (timerIsOn)
         {
             int minutes = Mathf.FloorToInt(timeLeft / 60F);
             int seconds = Mathf.FloorToInt(timeLeft - minutes * 60);
@@ -47,9 +50,16 @@ public class TimerScript : MonoBehaviour
         }
     }
 
+    IEnumerator Fade()
+    {
+        anim.SetBool("Fade", true);
+        yield return new WaitUntil(() => faderImage.color.a == 1);
+        SceneManager.LoadScene("GameOver");
+    }
+
     public void ResetTime()
     {
-        timeLeft = 10.0f;
+        timeLeft = 5.0f;
     }
 
 }

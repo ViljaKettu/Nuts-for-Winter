@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 public class MenuScript : MonoBehaviour
 {
-    public Image faderImade;
+    public Image faderImage;
     public Animator anim;
 
     //Load first level
@@ -39,7 +39,7 @@ public class MenuScript : MonoBehaviour
     IEnumerator Fade()
     {
         anim.SetBool("Fade", true);
-        yield return new WaitUntil(() => faderImade.color.a == 1);
+        yield return new WaitUntil(() => faderImage.color.a == 1);
         SceneManager.LoadScene("testi");
     }
 }

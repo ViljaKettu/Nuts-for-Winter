@@ -18,7 +18,7 @@ public class AutoLoad : MonoBehaviour
 
     IEnumerator Fade()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         anim.SetBool("Fade", true);
         yield return new WaitUntil(()=>faderImage.color.a==1);
         SceneManager.LoadScene("Menu");
