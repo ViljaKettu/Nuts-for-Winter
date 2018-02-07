@@ -1,0 +1,4 @@
+sceneSetups:
+- path: C:/Users/ViljaKet/Desktop/Nuts-for-Winter/Assets/Scenes/Menu.unity
+  isLoaded: 1
+  isActive: 1

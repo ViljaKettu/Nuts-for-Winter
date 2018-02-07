@@ -48,13 +48,12 @@ public class PlayerHealth : MonoBehaviour
     void Death()
     {
         isDead = true;
-        
         //stopping movement
         playerMovement.speed = 0;
         playerMovement.enabled = false;
         StartCoroutine(Fade());
         //StartCoroutine(WaitToLoad());
-        SceneManager.LoadScene("GameOver");
+        //SceneManager.LoadScene("GameOver");
     }
 
     //IEnumerator WaitToLoad()
@@ -66,7 +65,7 @@ public class PlayerHealth : MonoBehaviour
     {
         anim.SetBool("Fade", true);
         yield return new WaitUntil(() => faderImage.color.a == 1);
-        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("gameOver");
     }
 }
 
