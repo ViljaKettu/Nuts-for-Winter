@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4115544892940280}
   - component: {fileID: 212839398683343194}
+  - component: {fileID: 114499184630590420}
   m_Layer: 0
   m_Name: lehtikasa_fake
   m_TagString: Untagged
@@ -35,11 +36,32 @@ Transform:
   m_GameObject: {fileID: 1764107444496142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114499184630590420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1764107444496142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b9a56549fa67c469e0288bb6691084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab1: {fileID: 0}
+  whereToSpawn:
+  - {x: 10, y: 8}
+  - {x: -10, y: -8}
+  - {x: 21, y: -15}
+  - {x: 17, y: -8}
+  - {x: -21, y: 8}
+  - {x: 5, y: -21}
+  - {x: 6, y: 20}
+  - {x: 2, y: -15}
 --- !u!212 &212839398683343194
 SpriteRenderer:
   m_ObjectHideFlags: 1
