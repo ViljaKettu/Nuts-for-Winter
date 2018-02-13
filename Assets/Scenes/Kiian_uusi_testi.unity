@@ -1455,11 +1455,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4526743594423078, guid: 1f007c0958d3e554eb9a529cbb3a656e, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4526743594423078, guid: 1f007c0958d3e554eb9a529cbb3a656e, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 50855600181510140, guid: 1f007c0958d3e554eb9a529cbb3a656e,
         type: 2}
