@@ -16,7 +16,6 @@ public class MenuScript : MonoBehaviour
     public void OnClickPlay()
     {
         StartCoroutine(Fade());
-
     }
 
     //Quiting game
