@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114465088492983918}
   - component: {fileID: 61024856408548870}
   - component: {fileID: 50410003489716150}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: trunk002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1153220306273728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.8, y: 0, z: 0}
+  m_LocalPosition: {x: -25.4, y: -9.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -137,7 +137,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1490285597
+  m_SortingLayerID: 1151445381
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 83886355c2f6c8547a2d542ba2a52eea, type: 3}
