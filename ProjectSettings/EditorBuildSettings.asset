@@ -4,4 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 3d0ea77b75ce5964ea5bdd72d73349e6
+  - enabled: 1
+    path: Assets/Scenes/testi.unity
+    guid: 66317264dbc9f864db27203496073591
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 9af69572ecd987747bf098d11aaf9edb
+  - enabled: 1
+    path: Assets/Scenes/LevelComplete.unity
+    guid: 8563dee668a71594cb5e263f3d3b9d82
+  - enabled: 1
+    path: Assets/Scenes/FadeInOut.unity
+    guid: e8e8f6f4f58310f498e53b3658665dac

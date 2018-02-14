@@ -27,6 +27,10 @@ public class TimerScript : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
         }
+        else
+        {
+            StartCoroutine(Fade());
+        }
     }
 
     void OnGUI()
@@ -34,7 +38,6 @@ public class TimerScript : MonoBehaviour
         if (timeLeft <= 0)
         {
             timerIsOn = false;
-            StartCoroutine(Fade());
             //SceneManager.LoadScene("GameOver");
         }
         else if (timerIsOn)

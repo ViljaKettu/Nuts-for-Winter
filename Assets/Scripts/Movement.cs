@@ -6,12 +6,13 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float speed;
-
+    SoundManager steps;
     private Rigidbody2D rbod;
 
     void Start()
     {
         rbod = GetComponent<Rigidbody2D>();
+        
     }
 
     void FixedUpdate()
@@ -30,6 +31,7 @@ public class Movement : MonoBehaviour
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
         rbod.velocity = movement * speed;
+        steps.PlaySteps();
     }
 
 }

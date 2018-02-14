@@ -11,14 +11,6 @@ public class UIManager : MonoBehaviour
 {
     GameObject[] pauseObjects;
 
-    void Start()
-    {
-        ResetTime();
-        Time.timeScale = 1;
-        pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
-        HidePaused();
-    }
-
     static float timeLeft = 10.0f;
     bool timerIsOn = true;
     public Text timeText;
@@ -26,35 +18,12 @@ public class UIManager : MonoBehaviour
     public Image faderImage;
     public Animator anim;
 
-
-    void OnGUI()
+    void Start()
     {
-        if (timeLeft <= 0)
-        {
-            timerIsOn = false;
-            StartCoroutine(Fade());
-            //SceneManager.LoadScene("GameOver");
-        }
-        else if (timerIsOn)
-        {
-            int minutes = Mathf.FloorToInt(timeLeft / 60F);
-            int seconds = Mathf.FloorToInt(timeLeft - minutes * 60);
-            string styleTime = string.Format("{0:0}:{1:00}", minutes, seconds);
-            timeText.text = styleTime;
-            //GUI.Label(new Rect(Screen.width / 2 - 50, Screen.height / 8, 100, 100), "Time Left:" + styleTime);
-        }
-    }
-
-    IEnumerator Fade()
-    {
-        anim.SetBool("Fade", true);
-        yield return new WaitUntil(() => faderImage.color.a == 1);
-        SceneManager.LoadScene("GameOver");
-    }
-
-    public void ResetTime()
-    {
-        timeLeft = 5.0f;
+        ResetTime();
+        Time.timeScale = 1;
+        pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
+        HidePaused();
     }
 
     void Update()
@@ -78,9 +47,41 @@ public class UIManager : MonoBehaviour
                 Time.timeScale = 1;
                 HidePaused();
             }
-             
+
         }
     }
+
+
+    void OnGUI()
+    {
+        if (timeLeft <= 0)
+        {
+            timerIsOn = false;
+            //StartCoroutine(Fade());
+            SceneManager.LoadScene("GameOver");
+        }
+        else if (timerIsOn)
+        {
+            int minutes = Mathf.FloorToInt(timeLeft / 60F);
+            int seconds = Mathf.FloorToInt(timeLeft - minutes * 60);
+            string styleTime = string.Format("{0:0}:{1:00}", minutes, seconds);
+            timeText.text = styleTime;
+            //GUI.Label(new Rect(Screen.width / 2 - 50, Screen.height / 8, 100, 100), "Time Left:" + styleTime);
+        }
+    }
+
+    IEnumerator Fade()
+    {
+        anim.SetBool("Fade", true);
+        yield return new WaitUntil(() => faderImage.color.a == 1);
+        SceneManager.LoadScene("GameOver");
+    }
+
+    public void ResetTime()
+    {
+        timeLeft = 5.0f;
+    }
+
 
     // script for using pause button to unpause
     public void PauseControl()

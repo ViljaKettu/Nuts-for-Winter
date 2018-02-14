@@ -26,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
     {
         playerMovement = GetComponent<Movement>();
         fadeScene = GetComponent<SceneFader>();
+        
         //setting players starting health
         currentHealth = maxHealth;
     }
@@ -52,14 +53,8 @@ public class PlayerHealth : MonoBehaviour
         playerMovement.speed = 0;
         playerMovement.enabled = false;
         StartCoroutine(Fade());
-        //StartCoroutine(WaitToLoad());
-        //SceneManager.LoadScene("GameOver");
     }
 
-    //IEnumerator WaitToLoad()
-    //{
-    //    yield return new WaitForSeconds(5);
-    //}
 
     IEnumerator Fade()
     {
