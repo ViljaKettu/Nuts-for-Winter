@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float speed;
-    SoundManager steps;
+    public float speed, moveHor, moveVer;
+    AudioClip footsteps;
+    AudioSource source;
     private Rigidbody2D rbod;
 
     void Start()
     {
         rbod = GetComponent<Rigidbody2D>();
-        
+        source = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -25,14 +26,29 @@ public class Movement : MonoBehaviour
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        moveHor = Input.GetAxis("Horizontal");
+        moveVer = Input.GetAxis("Vertical");
 
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        Vector2 movement = new Vector2(moveHor, moveVer);
 
         rbod.velocity = movement * speed;
-        steps.PlaySteps();
+
+        PlaySteps();
     }
 
+    public void PlaySteps()
+    {
+        if (!source.isPlaying)
+        {
+            if (Mathf.Abs(moveHor) > 0 || Mathf.Abs(moveVer) > 0)
+            {
+                source.Play();
+            }
+        }
+        else if (moveHor == 0 && moveVer == 0)
+        {
+            source.Stop();
+        }
+    }
 }
 

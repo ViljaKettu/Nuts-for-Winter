@@ -13,6 +13,9 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
     public Slider healthSlider;
 
+    public AudioSource collectSource;
+    public AudioSource hurtSource;
+
     Movement playerMovement;
     SceneFader fadeScene;
 
@@ -20,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
     public Animator anim;
 
     bool damaged;
-    bool isDead;
+    bool isDead = false;
 
     void Awake()
     {
@@ -38,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= amount;
 
         healthSlider.value = currentHealth;
-
+        hurtSource.Play();
         if (currentHealth <= 0 && !isDead)
         {
             Death();
@@ -49,18 +52,26 @@ public class PlayerHealth : MonoBehaviour
     void Death()
     {
         isDead = true;
+
         //stopping movement
         playerMovement.speed = 0;
         playerMovement.enabled = false;
         StartCoroutine(Fade());
     }
 
+    private void OnColliderEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pick Up"))
+        {
+            collectSource.Play();
+        }
+    }
 
     IEnumerator Fade()
     {
         anim.SetBool("Fade", true);
         yield return new WaitUntil(() => faderImage.color.a == 1);
-        SceneManager.LoadScene("gameOver");
+        SceneManager.LoadScene("GameOver");
     }
 }
 

@@ -10,6 +10,7 @@ public class AutoLoad : MonoBehaviour
 {
     public Image faderImage;
     public Animator anim;
+    public AudioSource deathSource;
 
     void Awake()
     {
@@ -18,6 +19,7 @@ public class AutoLoad : MonoBehaviour
 
     IEnumerator Fade()
     {
+        //deathSource.Play();
         yield return new WaitForSeconds(2);
         anim.SetBool("Fade", true);
         yield return new WaitUntil(()=>faderImage.color.a==1);

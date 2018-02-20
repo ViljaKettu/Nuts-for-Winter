@@ -27,10 +27,10 @@ public class TimerScript : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
         }
-        else
-        {
-            StartCoroutine(Fade());
-        }
+        //else
+        //{
+        //    StartCoroutine(Fade());
+        //}
     }
 
     void OnGUI()
@@ -59,7 +59,7 @@ public class TimerScript : MonoBehaviour
 
     public void ResetTime()
     {
-        timeLeft = 5.0f;
+        timeLeft = 15.0f;
     }
 
 }

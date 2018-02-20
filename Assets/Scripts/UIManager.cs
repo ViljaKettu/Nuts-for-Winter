@@ -11,9 +11,11 @@ public class UIManager : MonoBehaviour
 {
     GameObject[] pauseObjects;
 
-    static float timeLeft = 10.0f;
+    public float timeLeft = 10.0f;
     bool timerIsOn = true;
     public Text timeText;
+
+    public AudioSource deathSource;
 
     public Image faderImage;
     public Animator anim;
@@ -57,6 +59,8 @@ public class UIManager : MonoBehaviour
         if (timeLeft <= 0)
         {
             timerIsOn = false;
+            deathSource.Play();
+            DontDestroyOnLoad(deathSource);
             //StartCoroutine(Fade());
             SceneManager.LoadScene("GameOver");
         }
@@ -65,8 +69,7 @@ public class UIManager : MonoBehaviour
             int minutes = Mathf.FloorToInt(timeLeft / 60F);
             int seconds = Mathf.FloorToInt(timeLeft - minutes * 60);
             string styleTime = string.Format("{0:0}:{1:00}", minutes, seconds);
-            timeText.text = styleTime;
-            //GUI.Label(new Rect(Screen.width / 2 - 50, Screen.height / 8, 100, 100), "Time Left:" + styleTime);
+            timeText.text = styleTime;           
         }
     }
 
@@ -79,7 +82,7 @@ public class UIManager : MonoBehaviour
 
     public void ResetTime()
     {
-        timeLeft = 5.0f;
+        timeLeft = 15.0f;
     }
 
 
