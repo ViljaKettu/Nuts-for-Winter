@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: f810a192df89ce649976cce82e79258a
-timeCreated: 1518520702
+guid: 9ae913ee8fa405f40bb3ec9746f956f3
+timeCreated: 1519121882
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: holeTrap_sheet_0
-    21300002: holeTrap_sheet_7
-    21300004: holeTrap_sheet_8
-    21300006: holeTrap_sheet_11
+    21300000: kallio_hyvis_0
+    21300002: kallio_hyvis_1
+    21300004: kallio_hyvis_2
+    21300006: kallio_hyvis_3
+    21300008: kallio_hyvis_4
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -36,7 +37,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
     wrapU: 1
     wrapV: 1
@@ -84,57 +85,71 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: holeTrap_sheet_0
+      name: kallio_hyvis_0
       rect:
         serializedVersion: 2
-        x: 1522
-        y: 34
-        width: 1053
-        height: 427
+        x: 0
+        y: 122
+        width: 992
+        height: 491
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: holeTrap_sheet_7
+      name: kallio_hyvis_1
       rect:
         serializedVersion: 2
-        x: 67
-        y: 66
-        width: 1054
-        height: 361
+        x: 1295
+        y: 122
+        width: 1000
+        height: 491
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: holeTrap_sheet_8
+      name: kallio_hyvis_2
       rect:
         serializedVersion: 2
-        x: 2975
-        y: 22
-        width: 1051
-        height: 400
+        x: 2595
+        y: 122
+        width: 1000
+        height: 491
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: holeTrap_sheet_11
+      name: kallio_hyvis_3
       rect:
         serializedVersion: 2
-        x: 4250
-        y: 47
-        width: 1052
-        height: 388
+        x: 3897
+        y: 122
+        width: 997
+        height: 491
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kallio_hyvis_4
+      rect:
+        serializedVersion: 2
+        x: 5197
+        y: 122
+        width: 997
+        height: 491
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

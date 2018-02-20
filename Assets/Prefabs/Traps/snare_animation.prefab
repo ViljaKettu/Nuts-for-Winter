@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114785798841411070}
   - component: {fileID: 61894216853648890}
   - component: {fileID: 50631310118913142}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: snare_animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
