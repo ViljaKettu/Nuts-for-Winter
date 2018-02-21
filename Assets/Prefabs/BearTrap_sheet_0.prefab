@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114843475853195422}
   - component: {fileID: 114308082946754044}
   - component: {fileID: 114020735498846554}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BearTrap_sheet_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1738245628946984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.78, y: 13.18, z: 0}
+  m_LocalPosition: {x: 7.75, y: 18.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -180,8 +180,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1151445381
-  m_SortingLayer: 0
+  m_SortingLayerID: -1208968429
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b33a2553da74bef438933f5b9b7eee5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
