@@ -6,8 +6,13 @@ using UnityEngine.UI;
 public class CharacterMovement : MonoBehaviour
 {
     public float speed;
+    private float moveHorizontal, moveVertical;
     public Text ScoreText;
     public Text WinText;
+
+    //audio by Vilja
+    AudioClip footsteps;
+    AudioSource source;
 
     private Rigidbody2D rb2d;
     private int count;
@@ -15,6 +20,7 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
         count = 0;
         SetScoreText();
         WinText.text = ""; //Valinnainen
@@ -25,8 +31,8 @@ public class CharacterMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        moveHorizontal = Input.GetAxis("Horizontal");
+        moveVertical = Input.GetAxis("Vertical");
 
         if (moveHorizontal == 0)
         {
@@ -55,6 +61,7 @@ public class CharacterMovement : MonoBehaviour
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
         rb2d.velocity = movement * speed;
+        PlaySteps();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -71,9 +78,26 @@ public class CharacterMovement : MonoBehaviour
     {
         ScoreText.text = "Count: " + count.ToString();
 
-        if (count >= 7) //Valinnainen
+        if (count >= 14) //Valinnainen
         {
             WinText.text = "You win!";
         }
     }
+
+    //by Vilja
+    public void PlaySteps()
+    {
+        if (!source.isPlaying)
+        {
+            if (Mathf.Abs(moveHorizontal) > 0 || Mathf.Abs(moveVertical) > 0)
+            {
+                source.Play();
+            }
+        }
+        else if (moveHorizontal == 0 && moveVertical == 0)
+        {
+            source.Stop();
+        }
+    }
+
 }

@@ -10,10 +10,14 @@ public class AutoLoad : MonoBehaviour
 {
     public Image faderImage;
     public Animator anim;
-    public AudioSource deathSource;
+    //public AudioSource deathSource;
+
+    SoundManager source;
 
     void Awake()
     {
+        source = FindObjectOfType(typeof(SoundManager)) as SoundManager;
+        source.PlayEndMusic();
         StartCoroutine(Fade());
     }
 

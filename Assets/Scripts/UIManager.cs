@@ -15,8 +15,6 @@ public class UIManager : MonoBehaviour
     bool timerIsOn = true;
     public Text timeText;
 
-    public AudioSource deathSource;
-
     public Image faderImage;
     public Animator anim;
 
@@ -59,8 +57,6 @@ public class UIManager : MonoBehaviour
         if (timeLeft <= 0)
         {
             timerIsOn = false;
-            deathSource.Play();
-            DontDestroyOnLoad(deathSource);
             //StartCoroutine(Fade());
             SceneManager.LoadScene("GameOver");
         }

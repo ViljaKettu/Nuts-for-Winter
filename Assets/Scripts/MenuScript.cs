@@ -40,7 +40,7 @@ public class MenuScript : MonoBehaviour
     {
         anim.SetBool("Fade", true);
         yield return new WaitUntil(() => faderImage.color.a == 1);
-        SceneManager.LoadScene("testi");
+        SceneManager.LoadScene("Kiian_uusi_testi");
     }
 }
 

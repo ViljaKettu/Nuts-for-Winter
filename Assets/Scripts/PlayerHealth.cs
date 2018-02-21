@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthSlider;
 
     public AudioSource collectSource;
-    public AudioSource hurtSource;
+    //public AudioSource hurtSource;
 
     Movement playerMovement;
     SceneFader fadeScene;
@@ -41,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= amount;
 
         healthSlider.value = currentHealth;
-        hurtSource.Play();
+
         if (currentHealth <= 0 && !isDead)
         {
             Death();
@@ -53,9 +53,7 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true;
 
-        //stopping movement
-        playerMovement.speed = 0;
-        playerMovement.enabled = false;
+        
         StartCoroutine(Fade());
     }
 

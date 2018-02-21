@@ -10,44 +10,47 @@ public class SoundManager : MonoBehaviour
 {
     //public AudioSource collectSource;
     //public AudioSource hurtSource;
-    //public AudioSource deathSource;
-    public AudioSource musicSource;
+    public AudioSource deathSource;
+    public AudioSource source;
     public static SoundManager instance = null;
 
-    PlayerHealth currentHealth;
+    private AudioClip music;
+    private AudioClip death;
 
     void Awake()
     {
-        currentHealth = GetComponent<PlayerHealth>();
 
         if (instance == null)
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-
-
+        PlayMenuMusic();
         DontDestroyOnLoad(this.gameObject);
     }
 
 
+    public void PlayMenuMusic()
+    {
+        if(instance != null)
+        {
+            if (instance.source!= null)
+            {
+                instance.deathSource.Stop();
+                instance.source.Play();
+            }
+        }
+    }
 
-    //public void PlayCollect(AudioClip clip)
-    //{
-    //    collectSource.clip = clip;
-
-    //    collectSource.Play();
-    //}
-
-    //public void PlayDeath(AudioClip clip)
-    //{
-    //    deathSource.clip = clip;
-
-    //    deathSource.Play();
-    //}
-    //public void PlayHurt(AudioClip clip)
-    //{
-    //    hurtSource.clip = clip;
-
-    //    hurtSource.Play();
-    //}
+    public void PlayEndMusic()
+    {
+        if(instance != null)
+        {
+            if (instance.deathSource != null)
+            {
+                instance.source.Stop();
+                instance.deathSource.Play();
+            }
+        }
+       
+    }
 }

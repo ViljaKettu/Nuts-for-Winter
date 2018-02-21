@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FadeInOut.unity
     guid: e8e8f6f4f58310f498e53b3658665dac
+  - enabled: 1
+    path: Assets/Scenes/Kiian_uusi_testi.unity
+    guid: 5d7e570f771a6e74b815829c628f2c4e
