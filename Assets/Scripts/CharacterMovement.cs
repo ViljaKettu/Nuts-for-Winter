@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -12,9 +13,10 @@ public class CharacterMovement : MonoBehaviour
 
     //audio by Vilja
     AudioClip footsteps;
+    public AudioSource collectSource;
     AudioSource source;
 
-    private Rigidbody2D rb2d;
+    public Rigidbody2D rb2d;
     private int count;
 
     void Start()
@@ -68,9 +70,12 @@ public class CharacterMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pickup"))
         {
-            other.gameObject.SetActive(false);
-            count = count + 1;
-            SetScoreText();
+
+                collectSource.Play();
+                other.gameObject.SetActive(false);
+                count = count + 1;
+                SetScoreText();
+     
         }
     }
 
@@ -80,7 +85,7 @@ public class CharacterMovement : MonoBehaviour
 
         if (count >= 14) //Valinnainen
         {
-            WinText.text = "You win!";
+            SceneManager.LoadScene("LevelComplete");
         }
     }
 

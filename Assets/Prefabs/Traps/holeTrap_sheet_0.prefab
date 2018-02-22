@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114979489063469406}
   - component: {fileID: 61163494903156156}
   - component: {fileID: 50855600181510140}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: holeTrap_sheet_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,8 +176,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1151445381
-  m_SortingLayer: 0
+  m_SortingLayerID: 697396663
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f810a192df89ce649976cce82e79258a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -13,11 +13,18 @@ public class AutoLoad : MonoBehaviour
     //public AudioSource deathSource;
 
     SoundManager source;
-
+    
     void Awake()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string scene = currentScene.name;
         source = FindObjectOfType(typeof(SoundManager)) as SoundManager;
-        source.PlayEndMusic();
+
+        if (scene == "GameOver")
+        {
+            source.PlayEndMusic();
+        }
+        
         StartCoroutine(Fade());
     }
 
@@ -26,7 +33,7 @@ public class AutoLoad : MonoBehaviour
         //deathSource.Play();
         yield return new WaitForSeconds(2);
         anim.SetBool("Fade", true);
-        yield return new WaitUntil(()=>faderImage.color.a==1);
+        yield return new WaitUntil(() => faderImage.color.a == 1);
         SceneManager.LoadScene("Menu");
     }
 }

@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
 {
     GameObject[] pauseObjects;
 
-    public float timeLeft = 10.0f;
+    public float timeLeft = 90.0f;
     bool timerIsOn = true;
     public Text timeText;
 
@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour
 
     public void ResetTime()
     {
-        timeLeft = 15.0f;
+        timeLeft = 90.0f;
     }
 
 

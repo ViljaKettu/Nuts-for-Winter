@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource collectSource;
     //public AudioSource hurtSource;
 
-    Movement playerMovement;
+    CharacterMovement playerMovement;
     SceneFader fadeScene;
 
     public Image faderImage;
@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Awake()
     {
-        playerMovement = GetComponent<Movement>();
+        playerMovement = FindObjectOfType(typeof(CharacterMovement)) as CharacterMovement;
         fadeScene = GetComponent<SceneFader>();
         
         //setting players starting health
@@ -53,20 +53,14 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true;
 
-        
+        playerMovement.speed = 0;
         StartCoroutine(Fade());
     }
 
-    private void OnColliderEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Pick Up"))
-        {
-            collectSource.Play();
-        }
-    }
 
     IEnumerator Fade()
     {
+        yield return new WaitForSeconds(1);
         anim.SetBool("Fade", true);
         yield return new WaitUntil(() => faderImage.color.a == 1);
         SceneManager.LoadScene("GameOver");
