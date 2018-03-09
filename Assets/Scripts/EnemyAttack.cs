@@ -4,6 +4,8 @@
 using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
+
+    // made by Kiia & Vilja
 {
     public int attackDamage = 10;
 

@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PropSpawner : MonoBehaviour {
 
-    public GameObject prefab1;
+    //made by Kiia
 
-   // float randX;
+   public GameObject prefab1;
    public Vector2[] whereToSpawn;
-    //public float spawnRate = 2f;
-   // float nextSpawn = 0.0f;
+   
 
 
 	// Use this for initialization

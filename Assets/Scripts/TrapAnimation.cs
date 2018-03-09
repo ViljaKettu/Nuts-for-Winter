@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrapAnimation : MonoBehaviour {
 
-//	public GameObject TrapStartAnimation;
+//	made by Kiia
 	public Animator animation;
 
 	void Start()
@@ -16,8 +16,6 @@ public class TrapAnimation : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		Debug.Log("OnTriggerEnter");
-		//animation.enabled = true;
-		//TrapStartAnimation.GetComponent<Animator> ().Play ("BearTrap");
 		animation.speed = 1;
 	}
 }
